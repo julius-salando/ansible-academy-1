@@ -10,3 +10,41 @@ ansible bianca_server -i /opt/ansible-academy/patrick-ain-limpin/hosts -m yum -a
 
 ansible bianca_server -i /opt/ansible-academy/patrick-ain-limpin/hosts -m service -a "name=nginx state=started" --become --become-user root
 
+
+
+- hosts: bianca_server
+  become: true
+  become_user: root
+  tasks:
+    - name: Install httpd
+      yum: name=httpd state=present
+
+    - name: Start httpd
+      service: name=httpd state=started
+
+
+- hosts: localhost
+  connection: local
+  become: true
+  tasks:
+    - name: Install Nginx
+      yum: name=nginx state=present
+
+    - name: start nginx
+      service: name=nginx state=started
+
+- hosts: team2
+  become: true
+  become_user: root
+  tasks:
+    - name: stop nginx container
+      service: name=nginx state=stopped
+
+	  
+
+ansible-playbook my_playbook.yml -i hosts
+
+
+sudo docker rm -f nginx
+sudo docker ps
+
