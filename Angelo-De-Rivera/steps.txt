@@ -6,4 +6,6 @@ ansible Jello_server -i /opt/ansible-academy/Angelo-De-Rivera/hosts -m service -
 
 ansible Jello_server -i /opt/ansible-academy/Angelo-De-Rivera/hosts -m yum -a "name=nginx state=absent" --become --become-user root
 
+ansible-playbook nginx.yml -i hosts
+
 
