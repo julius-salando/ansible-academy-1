@@ -1,0 +1,11 @@
+- hosts: localhost
+  connection: local
+  become: true
+  become_user: root
+  tasks:
+    - name: Install Nginx
+      yum: name=nginx state=present
+
+    - name: startnginx
+      service: name=nginx state=started
+
