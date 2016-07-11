@@ -5,3 +5,11 @@ ansible 10.10.1.249 --inventory-file hosts --module-name shell --args="touch /tm
 ssh -i /tmp/key.pem ec2-user@10.10.1.80
 
 chmod 400 key.pem
+
+ssh-agent bash
+
+ssh-add /tmp/key.pem
+
+ansible 10.10.1.249 -i hosts -m yum -a "name=nginx state=present" --become --become-user root
+
+ansible 10.10.1.249 -i hosts -m service -a "name=nginx state=started" --become --become-user root
