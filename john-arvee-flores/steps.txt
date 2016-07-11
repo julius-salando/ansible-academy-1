@@ -2,3 +2,7 @@ ansible 10.10.1.71 --inventory-file hosts --module-name ping
 
 ansible 10.10.1.71 --inventory-file hosts --module-name shell --args="touch /tmp/john-arvee-r-flores"
 
+chmod 400 ansible.pem
+
+ssh -i /tmp/ansible.pem ec2-user@10.10.1.80
+
