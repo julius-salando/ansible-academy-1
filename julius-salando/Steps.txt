@@ -23,3 +23,7 @@ go to another ec2-user
 ssh ec2-user@<public_key>
 
 sudo yum -y install git
+
+chmod 400 ansible.pem
+
+ssh -i /tmp/ansible.pem ec2-user@10.10.180
