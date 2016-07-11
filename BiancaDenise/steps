@@ -1,3 +1,12 @@
 ansible 54.175.146.244 --inventory-file hosts --module-name ping
 
 ansible 54.175.146.244 --inventory-file hosts --module-name shell --args="touch /tmp/bianca"
+
+install ansible to a target IP
+ansible 10.10.1.8 -i /opt/ansible-academy/BiancaDenise/hosts -m yum -a "name=nginx state=present" --become --become-user root
+yum = either present or absent
+
+start ansible to a target IP
+ansible 10.10.1.8 -i /opt/ansible-academy/BiancaDenise/hosts -m service -a "name=nginx state=started" --become --become-user root
+service = either started or stopped
+
