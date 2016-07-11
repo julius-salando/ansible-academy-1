@@ -27,3 +27,12 @@ sudo yum -y install git
 chmod 400 ansible.pem
 
 ssh -i /tmp/ansible.pem ec2-user@10.10.180
+
+sudo service nginx start
+sudo service nginx stop
+
+sudo yum remove nginx
+
+ansible team_1 -i hosts -m yum -a "name=nginx state-present" --become --become-user root
+ansible team_1 -i hosts -m service -a "name=nginx state-started" --become --become-user root
+ansible team_1 -i hosts -m yum -a "name=nginx state-absent" --become --become-user root
