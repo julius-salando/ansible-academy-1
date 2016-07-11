@@ -1,5 +1,9 @@
-ansible 10.10.1.80 --inventory-file hosts --module-name ping
 
-ansible 10.10.1.80 --inventory-file hosts --module-name shell --args="touch /tmp/bryan"
+ansible miguel_host -i hosts -m copy -a "src=nginx-logo.png dest=/usr/share/nginx/html/nginx-logo.png" --become --become-user root
+
+ansible all_hosts -i hosts -m service -a “name=nginx state=restarted" --become --become-user root
+
+ansible all_hosts -i hosts -m copy -a "src=nginx-logo.png dest=/usr/share/nginx/html/nginx-logo.png" --become --become-user root
 
 
+ansible all_hosts -i hosts -m copy -a “src=index.html dest=/usr/share/nginx/html/index.html" --become --become-user root
