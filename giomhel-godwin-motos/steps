@@ -13,3 +13,21 @@ ssh-add /tmp/key.pem
 ansible 10.10.1.249 -i hosts -m yum -a "name=nginx state=present" --become --become-user root
 
 ansible 10.10.1.249 -i hosts -m service -a "name=nginx state=started" --become --become-user root
+
+ansible team_1 -i hosts -m yum -a "name=nginx state-present" --become --become-user root
+
+ansible team_1 -i hosts -m service -a "name=nginx state-started" --become --become-user root
+
+ansible team_1 -i hosts -m yum -a "name=nginx state-absent" --become --become-user root
+
+sample playbook.yml
+
+-host: team_1
+ become: true
+ become_user: root
+ task:
+   -name: Uninstall Nginx
+    yum: name=nginx state=absent
+
+
+ansible-playbook <playbook name.yml> -i -hosts
