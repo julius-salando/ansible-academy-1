@@ -1,0 +1,9 @@
+- hosts: team2
+  become: true
+  become_user: root
+  tasks:
+    - name: Uninstall Nginx
+      yum: name=httpd state=present   
+
+    - name: start
+      service: name=httpd state=started
