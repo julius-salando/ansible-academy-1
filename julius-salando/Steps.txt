@@ -1,0 +1,25 @@
+Git commands
+
+git clone <url>
+
+git checkout -b julius-salando
+
+
+Install docker
+sudo yum -y install docker
+
+Install Ansible
+pip install ansible
+pip install ansible-lint
+
+
+Generate ssh keygen
+ssh-keygen -t rsa
+
+Make to go to the ssh folder
+cd .ssh
+
+go to another ec2-user
+ssh ec2-user@<public_key>
+
+sudo yum -y install git
