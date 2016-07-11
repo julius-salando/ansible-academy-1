@@ -1,5 +1,7 @@
 ansible 10.10.1.249 --inventory-file hosts --module-name ping
 
- ansible 10.10.1.249 --inventory-file hosts --module-name shell --args="touch /tmp/giomhel"
+ansible 10.10.1.249 --inventory-file hosts --module-name shell --args="touch /tmp/giomhel"
 
+ssh -i /tmp/key.pem ec2-user@10.10.1.80
 
+chmod 400 key.pem
