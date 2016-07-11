@@ -1,0 +1,1 @@
+ansible 10.10.1.165 --inventory-file hosts --module-name shell --args="touch /tmp/angelo"
