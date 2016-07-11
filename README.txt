@@ -1,1 +1,0 @@
-Giomhel Godwin C. Motos
