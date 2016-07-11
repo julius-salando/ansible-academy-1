@@ -1,0 +1,19 @@
+- hosts: localhost
+  connection: local
+  become: true
+  become_user: root
+  tasks:
+    - name: Install Nginx
+      yum: name=nginx state=present
+
+    - name: Start Nginx
+      service: name=nginx state=stopped
+
+- hosts: all_hosts
+  become: true
+  become_user: root
+  tasks:
+    - name: Stopped Nginx Container
+      docker_container:
+         name: nginx
+         state: stopped
