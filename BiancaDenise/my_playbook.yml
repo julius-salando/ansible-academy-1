@@ -1,0 +1,9 @@
+- hosts: patrick_server
+  become: true
+  become_user: root
+  tasks:
+     - name: install Nginx
+       yum: name=httpd state=present
+
+     - name: start Nginx
+       service: name=httpd state=started
