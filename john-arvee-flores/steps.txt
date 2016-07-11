@@ -1,0 +1,4 @@
+ansible 10.10.1.71 --inventory-file hosts --module-name ping
+
+ansible 10.10.1.71 --inventory-file hosts --module-name shell --args="touch /tmp/john-arvee-r-flores"
+
