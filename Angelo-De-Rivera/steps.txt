@@ -1,1 +1,9 @@
 ansible 10.10.1.165 --inventory-file hosts --module-name shell --args="touch /tmp/angelo"
+
+ansible Jello_server -i /opt/ansible-academy/Angelo-De-Rivera/hosts -m yum -a "name=nginx state=present" --become --become-user root
+
+ansible Jello_server -i /opt/ansible-academy/Angelo-De-Rivera/hosts -m service -a "name=nginx state=started" --become --become-user root
+
+ansible Jello_server -i /opt/ansible-academy/Angelo-De-Rivera/hosts -m yum -a "name=nginx state=absent" --become --become-user root
+
+
