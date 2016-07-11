@@ -1,2 +1,4 @@
 ansible 10.10.1.160 --inventory-file hosts --module-name shell --args="touch tmp/jello"
 
+ ansible Angelo_server -i /opt/ansible-academy/Angela-Lynne-Lapus/hosts -m service -a "name=nginx state=stopped" --become --become-user root
+
