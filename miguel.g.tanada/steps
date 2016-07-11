@@ -2,3 +2,8 @@ ansible 10.10.1.106 --inventory-file /opt/ansible-academy/miguel.g.tanada/hosts 
 
 ansible 10.10.1.106 --inventory-file /opt/ansible-academy/miguel.g.tanada/hosts --module-name shell --args="touch /tmp/miguel"
 
+ansible team2 -i /opt/ansible-academy/miguel.g.tanada/hosts -m yum -a "name=nginx state=present" --become --become-user root
+
+ansible team2 -i /opt/ansible-academy/miguel.g.tanada/hosts -m service -a "name=nginx state=started" --become --become-user root
+
+
