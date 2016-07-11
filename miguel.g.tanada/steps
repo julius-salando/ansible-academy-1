@@ -1,0 +1,4 @@
+ansible 10.10.1.106 --inventory-file /opt/ansible-academy/miguel.g.tanada/hosts --module-name ping
+
+ansible 10.10.1.106 --inventory-file /opt/ansible-academy/miguel.g.tanada/hosts --module-name shell --args="touch /tmp/miguel"
+
