@@ -1,0 +1,8 @@
+   36  git clone https://github.com/bzon/ansible-academy -b patrick-ian-limpin
+   40  cd ansible-academy/
+   44  cd ansible-academy/
+   51  ansible 10.10.1.31 --inventory-file hosts --module ping
+   52  ansible 10.10.1.31 --inventory-file hosts --module-name ping
+   53  ansible 10.10.1.80 --inventory-file hosts --module-name shell --args="touch /tmp/bianca"
+   55  ansible 10.10.1.31 --inventory-file hosts --module-name shell --args="touch /tmp/bianca"
+
