@@ -1,0 +1,27 @@
+- hosts: "{{ servers }}"
+  become: true
+  become_user: root
+  tasks:
+    # This is a comment.
+    - name: Install Docker package
+      yum:
+        name: docker
+        state: latest
+
+    - name: Start Docker Engine
+      service:
+        name: docker
+        state: started
+
+    - name: Install docker py
+      pip:
+        name: docker-py
+        state: present
+
+    - name: Deploy Nginx container
+      docker_container:
+        image: nginx
+        name: nginx
+        state: started
+        ports:
+          - "80:80" 

@@ -1,0 +1,12 @@
+- hosts: 10.10.1.239
+  become: true
+  become_user: root
+  tasks:
+    - name: Install httpd
+      yum: name=httpd state=present
+
+    - name: Start httpd
+      service: name=httpd state=started
+
+    - name: Restart httpd
+      service: name=httpd state=restarted

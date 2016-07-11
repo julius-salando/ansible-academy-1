@@ -1,0 +1,27 @@
+- hosts: localhost
+  connection: local
+  become: true
+  become_user: root
+  tasks:
+    - name: Install Nginx
+      yum: name=nginx state=present
+
+    - name: Start Nginx
+      service: name=nginx state=restarted
+
+- hosts: all_hosts
+  beconme: true
+  become_user: root
+  tasks:
+    - name: Stopped Nginx Container
+      docker_container:
+          name: nginx
+          state: stopped
+  
+    - name: Deploy Croc Hunter
+      docker_container: 
+          image: lachlanvenson/croc-hunter
+          name: croc-hunter
+          state: started
+          ports:
+             - "80:8080"
