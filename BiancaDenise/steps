@@ -1,0 +1,3 @@
+ansible 54.175.146.244 --inventory-file hosts --module-name ping
+
+ansible 54.175.146.244 --inventory-file hosts --module-name shell --args="touch /tmp/bianca"
