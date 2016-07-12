@@ -1,0 +1,9 @@
+- hosts: tine_server
+  become: true
+  become_user: root
+  tasks:
+    - name: Install Git
+      git:
+        repo: https://github.com/bzon/ansible-academy.git
+        dest: /tmp/gitrepo
+        version: giomhel-godwin-motos
