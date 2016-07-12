@@ -1,10 +1,10 @@
-- hosts: bianca_server
+- hosts: devops
   become: true
   become_user: root
   tasks:
-    - name: Install httpd
-      yum: name=httpd state=present
+    - name: Install Nginx
+      yum: name=nginx state=present
 
-    - name: Start httpd
-      service: name=httpd state=started
+    - name: Start Nginx
+      service: name=nginx state=started
 
