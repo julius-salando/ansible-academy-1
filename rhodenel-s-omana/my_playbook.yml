@@ -1,4 +1,4 @@
-- hosts: team2
+- hosts: 10.10.1.245
   become: true
   become_user: root
   tasks:

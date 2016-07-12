@@ -2,3 +2,7 @@ ansible 10.10.1.20 --inventory-file host --module-name ping
 
 ansible 10.10.1.20 --inventory-file host --module-name shell --args="touch /tmp/rhodenel"
 
+copy yung pem from aws sa pem file then add all public ip sa hosts file then do this:
+
+ ansible devops -i /opt/ansible-academy/rhodenel-s-omana/hosts -m ping --private-key /tmp/ansible-pem.pem
+ # ^ para sa pag ping ng buong group
