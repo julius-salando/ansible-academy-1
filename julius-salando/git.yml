@@ -1,0 +1,9 @@
+- hosts: 10.10.1.42
+  become: true
+  become_user: root
+  tasks:
+    - name: Copy Repo
+      git:
+        repo: https://github.com/bzon/ansible-academy.git
+        dest: /tmp/gitrepo
+        version: julius-salando

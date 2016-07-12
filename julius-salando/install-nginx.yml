@@ -1,0 +1,9 @@
+- hosts: devops
+  become: true
+  become_user: root
+  tasks:
+    - name: Install Nginx
+      yum: name=nginx state=absent
+   
+#    - name: Run Nginx
+#      service: name=nginx state=started
