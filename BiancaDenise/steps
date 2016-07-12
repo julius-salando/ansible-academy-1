@@ -1,12 +1,43 @@
+#Installing Ansible
+pip install ansible
+
+#Installing git
+sudo yum install -y git
+sudo pip install ansible-lint
+
+#Creating aa branch
+git checkout -b <branch name>
+
+#Cloning a branch
+git clone <url> -b <branch name>
+
+#Clone a repository
+git clone <url> <local dir name>
+
+#Generating private, public, and authorized_keys
+ssh-keygen -t rsa
+ 
+--cd .ssh
+--copy the .pub file from TARGET host
+--append it to your authorized_keys file
+
+#Go to Target host
+ssh ec2-user@<TARGET host IP>
+
+#Executing my_playbook.yml
+ansible-playbook my_playbook.yml -i hosts
+
+#Ping a host
 ansible 54.175.146.244 --inventory-file hosts --module-name ping
 
+#Create a file named bianca in /tmp directory of a host
 ansible 54.175.146.244 --inventory-file hosts --module-name shell --args="touch /tmp/bianca"
 
-install ansible to a target IP
+#Install ansible to a target IP
 ansible 10.10.1.8 -i /opt/ansible-academy/BiancaDenise/hosts -m yum -a "name=nginx state=present" --become --become-user root
 yum = either present or absent
 
-start ansible to a target IP
+#Start ansible to a target IP
 ansible 10.10.1.8 -i /opt/ansible-academy/BiancaDenise/hosts -m service -a "name=nginx state=started" --become --become-user root
 service = either started or stopped
 
