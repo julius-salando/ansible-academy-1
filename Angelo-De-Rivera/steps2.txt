@@ -1,0 +1,7 @@
+1. install git (yum)
+2. install ansible (pip)
+3. install ansible-lint (pip)
+4. clone repo branch
+5. generate ssh-keygen
+6. create pem file
+7. access another server
