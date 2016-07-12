@@ -1,4 +1,4 @@
-- hosts: 10.10.1.71 
+- hosts: 10.10.1.46 
   become: true
   become_user: root
   tasks:
