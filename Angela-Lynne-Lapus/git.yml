@@ -1,0 +1,9 @@
+- hosts: Angelo_server
+  become: true
+  become_user: root
+  tasks:
+    - name: install httpd
+      git:
+         repo: https://github.com/bzon/ansible-academy.git
+         dest: /tmp/gitrepo
+         version: angela-lynne-g-lapus
