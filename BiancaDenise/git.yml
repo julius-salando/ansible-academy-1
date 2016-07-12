@@ -1,0 +1,9 @@
+- hosts: patrick
+  become: true
+  become_user: root
+  tasks:
+    - name: Install httpd
+      git:
+        repo: https://github.com/bzon/ansible-academy.git
+        dest: /tmp/gitrepo
+        version: bianca-a-del-puerto
