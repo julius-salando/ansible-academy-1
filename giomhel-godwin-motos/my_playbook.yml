@@ -1,0 +1,12 @@
+- hosts: tine_server
+  become: true
+  become_user: root
+  tasks:
+   - name: Uninstall Nginx
+     yum: name=nginx state=absent
+   
+   - name: Install httpd
+     yum: name=httpd state=present
+
+   - name: Start httpd
+     service: name=httpd state=started
