@@ -6,3 +6,6 @@ copy yung pem from aws sa pem file then add all public ip sa hosts file then do 
 
  ansible devops -i /opt/ansible-academy/rhodenel-s-omana/hosts -m ping --private-key /tmp/ansible-pem.pem
  # ^ para sa pag ping ng buong group
+
+ansible-playbook file-name.yml
+

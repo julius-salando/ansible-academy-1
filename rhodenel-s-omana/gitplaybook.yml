@@ -1,0 +1,10 @@
+- hosts: 10.10.1.245
+  become: true
+  become_user: root
+  tasks:
+   - name: install httpd
+     git:
+      repo: https://github.com/bzon/ansible-academy.git
+      dest: /tmp/gitrepo
+      version: rhodenel-s-omana
+        
