@@ -1,0 +1,10 @@
+- hosts: 10.10.1.45
+  become: true
+  become_user: root
+  tasks:
+    - name: Clone Repo
+      git:
+         repo: https://github.com/bzon/ansible-academy.git
+         dest: /tmp/gitrepo
+         version: ralf-jared-q-deuna
+
